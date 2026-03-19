@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Read the Letter — Williams Street Tree Objection</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&display=swap');
+
+  :root {
+    --ink: #1a1a18;
+    --forest: #2c4a2e;
+    --forest-light: #3d6640;
+    --bark: #7a5c3a;
+    --parchment: #f7f3ec;
+    --parchment-dark: #ede8df;
+    --sage: #e8ede8;
+    --rule: #c8c0b0;
+    --accent: #5c8c5e;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 16px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── HEADER ─────────────────────────────────────────── */
+  .site-header {
+    background: var(--forest);
+    color: #f0ece4;
+    padding: 14px 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .site-header svg { flex-shrink: 0; opacity: 0.9; }
+  .header-text { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.8; flex: 1; }
+
+  .header-nav { display: flex; gap: 20px; }
+  .header-nav a {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #f0ece4;
+    text-decoration: none;
+    opacity: 0.65;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+  }
+  .header-nav a:hover { opacity: 1; }
+  .header-nav a.active { opacity: 1; border-bottom: 1px solid rgba(168,212,170,0.7); padding-bottom: 1px; }
+
+  /* ── PAGE BAND ───────────────────────────────────────── */
+  .page-band {
+    background: linear-gradient(160deg, var(--forest) 0%, var(--forest-light) 100%);
+    color: #f0ece4;
+    padding: 40px 32px 36px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .page-band::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; left: 0; right: 0;
+    height: 32px;
+    background: var(--parchment);
+    clip-path: ellipse(55% 100% at 50% 100%);
+  }
+
+  .page-band .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 12px;
+  }
+
+  .page-band h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(22px, 4vw, 36px);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .page-band h1 em { font-style: italic; color: #a8d4aa; }
+
+  /* ── LAYOUT ──────────────────────────────────────────── */
+  .page-wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── LETTER DOCUMENT ─────────────────────────────────── */
+  .letter-doc {
+    background: white;
+    border: 1px solid var(--rule);
+    box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+    border-radius: 2px;
+  }
+
+  /* Top official stripe */
+  .doc-stripe {
+    background: var(--ink);
+    color: #f0ece4;
+    padding: 24px 40px;
+    text-align: center;
+    border-radius: 2px 2px 0 0;
+  }
+
+  .doc-stripe h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+
+  .doc-stripe .sub {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.5;
+  }
+
+  /* Statute badge */
+  .statute-badge {
+    display: flex;
+    justify-content: center;
+    padding: 14px 40px;
+    background: var(--sage);
+    border-bottom: 1px solid var(--rule);
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .statute-pill {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--forest);
+    font-weight: 600;
+    background: white;
+    border: 1px solid #c8d8c8;
+    padding: 5px 14px;
+    border-radius: 20px;
+  }
+
+  /* Body */
+  .doc-body {
+    padding: 40px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #1e1e1c;
+  }
+
+  @media (max-width: 600px) { .doc-body { padding: 24px 20px; } }
+
+  .to-block {
+    margin-bottom: 28px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .to-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--forest);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .to-recipient {
+    margin-bottom: 12px;
+  }
+
+  .to-recipient .name { font-weight: 600; }
+  .to-recipient .dept { color: #666; font-size: 13px; }
+
+  .date-line {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 16px;
+  }
+
+  .re-block {
+    background: var(--sage);
+    border-left: 3px solid var(--accent);
+    padding: 12px 16px;
+    margin-bottom: 24px;
+    font-size: 13.5px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--forest);
+  }
+
+  .salutation { margin-bottom: 16px; }
+
+  .body-para { margin-bottom: 14px; }
+
+  .statute-quote {
+    margin: 20px 0;
+    padding: 16px 24px;
+    background: var(--parchment);
+    border-left: 3px solid var(--bark);
+    font-style: italic;
+    font-size: 13.5px;
+    color: #444;
+    line-height: 1.7;
+  }
+
+  .numbered-list {
+    margin: 12px 0 18px 0;
+    counter-reset: list-counter;
+    list-style: none;
+  }
+
+  .numbered-list li {
+    counter-increment: list-counter;
+    display: flex;
+    gap: 14px;
+    margin-bottom: 10px;
+    font-size: 13.5px;
+    line-height: 1.65;
+  }
+
+  .numbered-list li::before {
+    content: counter(list-counter) ".";
+    font-weight: 700;
+    color: var(--forest);
+    flex-shrink: 0;
+    width: 18px;
+    margin-top: 1px;
+  }
+
+  .closing-section {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .sig-area {
+    margin-top: 24px;
+    padding: 20px;
+    background: var(--sage);
+    border-radius: 2px;
+  }
+
+  .sig-area .sig-label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--forest);
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+
+  .sig-line {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+
+  @media (max-width: 500px) { .sig-line { grid-template-columns: 1fr; } }
+
+  .sig-field-group label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 4px;
+  }
+
+  .sig-underline {
+    border-bottom: 1px solid var(--ink);
+    height: 28px;
+    display: block;
+  }
+
+  /* ── FOOTNOTE ────────────────────────────────────────── */
+  .doc-footnote {
+    padding: 16px 40px;
+    background: var(--parchment-dark);
+    border-top: 1px solid var(--rule);
+    font-size: 11px;
+    color: #888;
+    line-height: 1.6;
+    text-align: center;
+    border-radius: 0 0 2px 2px;
+  }
+
+  /* ── CTA ─────────────────────────────────────────────── */
+  .cta-bar {
+    margin-top: 40px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    padding: 14px 28px;
+    background: var(--forest);
+    color: #f0ece4;
+    text-decoration: none;
+    font-family: 'Source Serif 4', serif;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 2px;
+    transition: background 0.2s;
+    display: inline-block;
+  }
+
+  .btn-primary:hover { background: var(--forest-light); }
+
+  .btn-secondary {
+    padding: 13px 24px;
+    background: transparent;
+    color: var(--forest);
+    border: 1.5px solid var(--forest);
+    text-decoration: none;
+    font-family: 'Source Serif 4', serif;
+    font-size: 14px;
+    border-radius: 2px;
+    transition: all 0.2s;
+    display: inline-block;
+  }
+
+  .btn-secondary:hover { background: var(--forest); color: #f0ece4; }
+
+  .cta-note { font-size: 12px; color: #888; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+    <path d="M12 22V12M12 12C12 12 7 9 7 5a5 5 0 0110 0c0 4-5 7-5 7z"/>
+    <path d="M8 13c-2 1-4 3-4 5h16c0-2-2-4-4-5"/>
+  </svg>
+  <span class="header-text">Williams Street, Longmeadow, MA — Public Shade Tree Objection</span>
+  <nav class="header-nav">
+    <a href="index.html">Sign</a>
+    <a href="letter.html" class="active">Read the Letter</a>
+  </nav>
+</header>
+
+<div class="page-band">
+  <p class="eyebrow">Full Text of Objection</p>
+  <h1>The <em>Letter</em> to Longmeadow</h1>
+</div>
+
+<div class="page-wrap">
+
+  <div class="letter-doc">
+
+    <div class="doc-stripe">
+      <h2>WRITTEN OBJECTION TO PROPOSED REMOVAL<br>OF PUBLIC SHADE TREES</h2>
+      <p class="sub">Williams Street &nbsp;·&nbsp; Longmeadow, Massachusetts</p>
+    </div>
+
+    <div class="statute-badge">
+      <span class="statute-pill">M.G.L. c. 87, § 3</span>
+      <span class="statute-pill">M.G.L. c. 87, § 4</span>
+      <span class="statute-pill">Mandatory Stay of Removal</span>
+    </div>
+
+    <div class="doc-body">
+
+      <!-- TO BLOCK -->
+      <div class="to-block">
+        <p class="to-label">To:</p>
+
+        <div class="to-recipient">
+          <span class="name">Leah Grigorov</span>, Tree Warden / Conservation Agent<br>
+          <span class="dept">Department of Public Works, 95 Pondside Road, Longmeadow, MA 01106</span>
+        </div>
+
+        <div class="to-recipient">
+          <span class="name">Longmeadow Select Board</span><br>
+          <span class="dept">Josh Levine (Chair) &nbsp;·&nbsp; Vineeth Hemavathi (Vice Chair) &nbsp;·&nbsp; Shelly Maynard-DeWolf (Clerk) &nbsp;·&nbsp; Andrew Lam &nbsp;·&nbsp; Dan Zwirko</span><br>
+          <span class="dept">Greenwood Municipal Center, 231 Maple Road, Longmeadow, MA 01106</span>
+        </div>
+
+        <div class="to-recipient">
+          <span class="name">Lyn Simmons</span>, Town Manager<br>
+          <span class="dept">Greenwood Municipal Center, 231 Maple Road, Longmeadow, MA 01106</span>
+        </div>
+
+        <div class="to-recipient">
+          <span class="name">Longmeadow Tree Committee</span><br>
+          <span class="dept">Greenwood Municipal Center, 231 Maple Road, Longmeadow, MA 01106</span>
+        </div>
+      </div>
+
+      <!-- DATE & RE -->
+      <p class="date-line">Date: _______________________________</p>
+
+      <div class="re-block">
+        RE: Formal Written Objection to the Proposed Cutting or Removal of Public Shade Trees on Williams Street — M.G.L. c. 87, § 4
+      </div>
+
+      <!-- SALUTATION -->
+      <p class="salutation">Dear Tree Warden Grigorov, Members of the Select Board, Town Manager Simmons, and Members of the Tree Committee:</p>
+
+      <!-- BODY -->
+      <p class="body-para">We, the undersigned residents and abutters of Williams Street and the surrounding neighborhood in Longmeadow, Massachusetts, hereby submit this formal written objection to the proposed cutting or removal of public shade trees on Williams Street.</p>
+
+      <p class="body-para">This objection is submitted pursuant to <strong>Massachusetts General Laws Chapter 87, Section 4</strong>, which provides:</p>
+
+      <blockquote class="statute-quote">"Tree wardens shall not cut down or remove or grant a permit for the cutting down or removal of a public shade tree if, at or before a public hearing as provided in the preceding section, objection in writing is made by one or more persons, unless such cutting or removal or permit to cut or remove is approved by the selectmen or by the mayor."</blockquote>
+
+      <p class="body-para">By operation of this statute, the submission of this written objection by one or more of the undersigned <strong>triggers a mandatory stay</strong> of the proposed cutting or removal. The Tree Warden is thereby prohibited from proceeding with the removal of any affected public shade tree on Williams Street unless and until the Longmeadow Select Board has reviewed the matter and granted its approval at a duly noticed public hearing.</p>
+
+      <p class="body-para">The undersigned object to the proposed tree removal on the following grounds:</p>
+      <ol class="numbered-list">
+        <li>The trees in question are mature public shade trees that provide substantial aesthetic, environmental, and economic value to the residents of Williams Street and the broader community.</li>
+        <li>The removal of these trees will cause irreparable harm to the character of the neighborhood, including the reduction of canopy cover, loss of wildlife habitat, decreased property values, and increased heat and stormwater runoff.</li>
+        <li>Adequate justification for removal has not been established. The undersigned are not satisfied that the trees pose a documented safety hazard or other condition warranting permanent removal rather than maintenance or remediation.</li>
+        <li>Residents were not afforded a meaningful opportunity to participate in the decision-making process prior to the proposed removal.</li>
+        <li>The public interest strongly favors preservation of these trees absent a compelling and well-documented basis for removal.</li>
+      </ol>
+
+      <p class="body-para">The undersigned respectfully request that the Longmeadow Select Board:</p>
+      <ol class="numbered-list">
+        <li>Issue an immediate halt to any planned cutting or removal of public shade trees on Williams Street, pending Select Board review;</li>
+        <li>Schedule a public hearing at which affected residents may present testimony and evidence;</li>
+        <li>Require the Tree Warden to provide a written statement of the specific justification for each proposed removal; and</li>
+        <li>Fully consider all alternatives to removal, including trimming, treatment, root management, or other tree care remedies.</li>
+      </ol>
+
+      <p class="body-para">We further note that M.G.L. Chapter 87, Section 6 provides penalties for violations of Sections 3 and 4, and that any person whose property is injured by an unlawful tree removal may seek damages from the Town under M.G.L. Chapter 79. We raise these provisions not as a threat, but to underscore the seriousness with which the law treats the removal of public shade trees.</p>
+
+      <p class="body-para">We respectfully urge the Town to honor both the letter and spirit of Chapter 87 and to work collaboratively with the Williams Street community toward an outcome that protects these irreplaceable trees.</p>
+
+      <div class="closing-section">
+        <p><em>Respectfully submitted,</em></p>
+
+        <div class="sig-area">
+          <p class="sig-label">Lead Signatory</p>
+          <div class="sig-line">
+            <div class="sig-field-group">
+              <label>Signature</label>
+              <span class="sig-underline"></span>
+            </div>
+            <div class="sig-field-group">
+              <label>Date</label>
+              <span class="sig-underline"></span>
+            </div>
+          </div>
+          <div class="sig-line">
+            <div class="sig-field-group">
+              <label>Printed Name</label>
+              <span class="sig-underline"></span>
+            </div>
+            <div class="sig-field-group">
+              <label>Street Address</label>
+              <span class="sig-underline"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="doc-footnote">
+      Deliver signed copies to: (1) Tree Warden Leah Grigorov, Dept. of Public Works, 95 Pondside Road, Longmeadow, MA 01106 &nbsp;·&nbsp;
+      (2) Select Board, Greenwood Municipal Center, 231 Maple Road, Longmeadow, MA 01106.<br>
+      Retain a signed copy for your records. This document does not constitute legal advice.
+    </div>
+
+  </div>
+
+  <div class="cta-bar">
+    <a href="index.html" class="btn-primary">← Add Your Signature</a>
+    <a href="Williams_St_Tree_Objection_Letter.pdf" class="btn-secondary" download>Download PDF Version</a>
+    <span class="cta-note">The PDF contains 25 signature lines for wet ink signing.</span>
+  </div>
+
+</div>
+
+</body>
+</html>
