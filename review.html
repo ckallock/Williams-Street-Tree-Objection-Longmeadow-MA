@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Petition for Performance Review & Non-Reappointment of Tree Warden — Longmeadow MA</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&display=swap');
+
+  :root {
+    --ink: #1a1a18;
+    --slate: #2a3540;
+    --slate-light: #3a4a58;
+    --rust: #7a3a2e;
+    --parchment: #f7f3ec;
+    --parchment-dark: #ede8df;
+    --cream: #f0ece4;
+    --mist: #e8ecee;
+    --rule: #c8c0b0;
+    --accent: #4a6c8c;
+    --danger: #8b2020;
+    --success: #2c5f2e;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 16px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── HEADER ─────────────────────────────────────────── */
+  .site-header {
+    background: var(--slate);
+    color: var(--cream);
+    padding: 14px 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .site-header svg { flex-shrink: 0; opacity: 0.85; }
+  .header-text { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.75; flex: 1; }
+
+  .header-nav { display: flex; gap: 20px; }
+  .header-nav a {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--cream);
+    text-decoration: none;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+  }
+  .header-nav a:hover { opacity: 1; }
+  .header-nav a.active { opacity: 1; border-bottom: 1px solid rgba(180,200,220,0.7); padding-bottom: 1px; }
+
+  @media (max-width: 540px) {
+    .site-header { padding: 12px 16px; }
+    .header-text { display: none; }
+    .header-nav { gap: 14px; }
+  }
+
+  /* ── HERO ────────────────────────────────────────────── */
+  .hero {
+    background: linear-gradient(155deg, var(--slate) 0%, var(--slate-light) 100%);
+    color: var(--cream);
+    padding: 60px 32px 52px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; left: 0; right: 0;
+    height: 40px;
+    background: var(--parchment);
+    clip-path: ellipse(55% 100% at 50% 100%);
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 14px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(26px, 4.5vw, 44px);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero h1 em { font-style: italic; color: #a8c4dc; }
+
+  .hero-sub {
+    font-size: 15px;
+    opacity: 0.78;
+    max-width: 560px;
+    margin: 0 auto 32px;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  .stat-row {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .stat { text-align: center; }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: #a8c4dc;
+    line-height: 1;
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    margin-top: 4px;
+  }
+
+  .count-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(168, 196, 220, 0.15);
+    border: 1px solid rgba(168, 196, 220, 0.35);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    color: #a8c4dc;
+  }
+
+  .count-badge .dot {
+    width: 8px; height: 8px;
+    background: #a8c4dc;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+
+  /* ── LAYOUT ──────────────────────────────────────────── */
+  .page-wrap {
+    max-width: 1020px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 40px;
+    align-items: start;
+  }
+
+  @media (max-width: 780px) {
+    .two-col { grid-template-columns: 1fr; }
+    .sign-card { order: -1; }
+  }
+
+  /* ── PETITION PANEL ──────────────────────────────────── */
+  .petition-panel {
+    background: white;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.07);
+  }
+
+  .petition-header {
+    background: var(--slate);
+    color: var(--cream);
+    padding: 20px 28px;
+    border-radius: 2px 2px 0 0;
+  }
+
+  .petition-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+
+  .petition-header p {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-top: 4px;
+  }
+
+  .petition-body {
+    padding: 28px;
+    font-size: 13.5px;
+    line-height: 1.75;
+    color: #2a2a28;
+  }
+
+  .to-block {
+    margin-bottom: 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+
+  .to-block .to-label {
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin-bottom: 8px;
+  }
+
+  .to-block .recipient { margin-bottom: 8px; }
+  .to-block .recipient strong { display: block; }
+  .to-block .recipient span { color: #555; font-size: 12px; }
+
+  .re-line {
+    font-weight: 600;
+    margin-bottom: 18px;
+    padding: 10px 14px;
+    background: var(--mist);
+    border-left: 3px solid var(--accent);
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+
+  .section-head {
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin: 20px 0 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .petition-body p { margin-bottom: 12px; }
+
+  .petition-body blockquote {
+    margin: 14px 0;
+    padding: 12px 18px;
+    background: var(--parchment);
+    border-left: 3px solid var(--rust);
+    font-style: italic;
+    font-size: 13px;
+    color: #444;
+    line-height: 1.65;
+  }
+
+  .ground {
+    margin-bottom: 16px;
+    padding: 14px 16px;
+    background: var(--parchment);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 2px 2px 0;
+  }
+
+  .ground-title {
+    font-weight: 700;
+    font-size: 12.5px;
+    color: var(--slate);
+    margin-bottom: 6px;
+  }
+
+  .ground p { margin-bottom: 0; font-size: 13px; }
+
+  .petition-body ol { margin: 10px 0 12px 20px; }
+  .petition-body ol li { margin-bottom: 8px; font-size: 13px; }
+
+  .signers-preview {
+    margin-top: 16px;
+    padding: 14px;
+    background: var(--mist);
+    border-radius: 2px;
+    min-height: 60px;
+  }
+
+  .signers-preview h4 {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .signer-entry {
+    font-size: 12.5px;
+    padding: 6px 10px;
+    background: white;
+    border: 1px solid var(--rule);
+    margin-bottom: 6px;
+    border-radius: 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    animation: slideIn 0.3s ease;
+  }
+
+  .signer-name { font-weight: 600; font-style: italic; font-family: 'Playfair Display', serif; }
+  .signer-addr { font-size: 11px; color: #777; }
+
+  .empty-signers {
+    font-size: 12px;
+    color: #999;
+    font-style: italic;
+    text-align: center;
+    padding: 8px 0;
+  }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SIGN CARD ───────────────────────────────────────── */
+  .sign-card {
+    background: white;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.07);
+    position: sticky;
+    top: 24px;
+  }
+
+  .sign-card-header {
+    background: var(--slate);
+    color: var(--cream);
+    padding: 20px 24px;
+    border-radius: 2px 2px 0 0;
+  }
+
+  .sign-card-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .sign-card-header p { font-size: 12px; opacity: 0.6; margin-top: 6px; }
+
+  .sign-form { padding: 24px; }
+
+  .field { margin-bottom: 18px; }
+
+  .field label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin-bottom: 6px;
+  }
+
+  .field input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1.5px solid var(--rule);
+    border-radius: 2px;
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 14px;
+    color: var(--ink);
+    background: var(--parchment);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    -webkit-appearance: none;
+  }
+
+  .field input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(74, 108, 140, 0.12);
+    background: white;
+  }
+
+  .field input.error { border-color: var(--danger); }
+
+  .field-note { font-size: 11px; color: #888; margin-top: 5px; }
+
+  .sig-field {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1.5px solid var(--rule);
+    border-radius: 2px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 22px;
+    font-style: italic;
+    color: var(--ink);
+    background: white;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    line-height: 1.3;
+  }
+
+  .sig-field:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(74, 108, 140, 0.12);
+  }
+
+  .consent-box {
+    background: var(--mist);
+    border: 1px solid #b8ccd8;
+    border-radius: 2px;
+    padding: 14px;
+    margin-bottom: 20px;
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: #2a3a4a;
+  }
+
+  .consent-box label { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
+
+  .consent-box input[type="checkbox"] {
+    width: 16px; height: 16px;
+    flex-shrink: 0; margin-top: 3px;
+    accent-color: var(--slate); cursor: pointer;
+  }
+
+  .btn-submit {
+    width: 100%;
+    padding: 14px;
+    background: var(--slate);
+    color: var(--cream);
+    border: none;
+    border-radius: 2px;
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+  }
+
+  .btn-submit:hover { background: var(--slate-light); }
+  .btn-submit:active { transform: scale(0.99); }
+
+  .error-msg { font-size: 11px; color: var(--danger); margin-top: 4px; display: none; }
+
+  /* ── SUCCESS STATE ───────────────────────────────────── */
+  .success-panel { display: none; padding: 28px 24px; text-align: center; }
+
+  .check-icon {
+    width: 56px; height: 56px;
+    background: var(--success);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 16px;
+  }
+
+  .success-panel h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--slate);
+    margin-bottom: 10px;
+  }
+
+  .success-panel p { font-size: 14px; color: #555; margin-bottom: 20px; }
+
+  .btn-sign-another {
+    padding: 10px 24px;
+    background: transparent;
+    color: var(--slate);
+    border: 1.5px solid var(--slate);
+    border-radius: 2px;
+    font-family: 'Source Serif 4', serif;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn-sign-another:hover { background: var(--slate); color: var(--cream); }
+
+  /* ── EXPORT ──────────────────────────────────────────── */
+  .export-section {
+    margin-top: 32px;
+    padding: 24px 28px;
+    background: var(--parchment-dark);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+  }
+
+  .export-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .export-section p { font-size: 13px; color: #666; margin-bottom: 16px; }
+
+  .btn-export {
+    padding: 10px 22px;
+    background: var(--rust);
+    color: white;
+    border: none;
+    border-radius: 2px;
+    font-family: 'Source Serif 4', serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-right: 10px;
+    margin-bottom: 8px;
+  }
+
+  .btn-export:hover { background: #6a2a1e; }
+
+  .divider { height: 1px; background: var(--rule); margin: 18px 0; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+    <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+  </svg>
+  <span class="header-text">Williams Street, Longmeadow, MA — Administrative Review Petition</span>
+  <nav class="header-nav">
+    <a href="index.html">Sign Objection</a>
+    <a href="review.html" class="active">Sign Review Petition</a>
+    <a href="letter.html">Read the Letter</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <p class="hero-eyebrow">Citizen Petition for Performance Review &amp; Non-Reappointment — M.G.L. c. 41, § 106</p>
+  <h1>Petition to Remove<br><em>the Tree Warden</em></h1>
+  <p class="hero-sub">This petition calls on the Town Manager to conduct a comprehensive performance review of Tree Warden Leah Grigorov and to decline her reappointment based on a documented pattern of procedural non-compliance, lack of scientific rigor, and failure of public accountability — with Williams Street as the most recent example.</p>
+  <div class="stat-row">
+    <div class="stat">
+      <span class="stat-num" id="hero-count">0</span>
+      <span class="stat-label">Signatures</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">5</span>
+      <span class="stat-label">Grounds for removal</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">7</span>
+      <span class="stat-label">Actions requested of Town Manager</span>
+    </div>
+  </div>
+  <div class="count-badge">
+    <span class="dot"></span>
+    <span id="live-count-text">Be the first to sign</span>
+  </div>
+</div>
+
+<div class="page-wrap">
+  <div class="two-col">
+
+    <!-- PETITION PANEL -->
+    <div class="petition-panel">
+      <div class="petition-header">
+        <h2>Citizen Petition for Performance Review &amp; Non-Reappointment — Full Text</h2>
+        <p>M.G.L. Chapter 87 &amp; M.G.L. Chapter 41, Section 106</p>
+      </div>
+      <div class="petition-body">
+
+        <div class="to-block">
+          <p class="to-label">To:</p>
+          <div class="recipient">
+            <strong>Lyn Simmons</strong>, Town Manager
+            <span>Greenwood Municipal Center, 231 Maple Road, Longmeadow, MA 01106</span>
+          </div>
+          <p class="to-label" style="margin-top:10px;">CC:</p>
+          <div class="recipient">
+            <strong>Longmeadow Select Board</strong>
+            <span>Josh Levine (Chair) · Vineeth Hemavathi (Vice Chair) · Shelly Maynard-DeWolf (Clerk) · Andrew Lam · Dan Zwirko</span>
+            <span>Greenwood Municipal Center, 231 Maple Road, Longmeadow, MA 01106</span>
+          </div>
+          <div class="recipient">
+            <strong>Sean Van Deusen</strong>, Director of Public Works
+            <span>170 Dwight Road, Longmeadow, MA 01106</span>
+          </div>
+          <div class="recipient">
+            <strong>Longmeadow Tree Committee</strong>
+            <span>Greenwood Municipal Center, 231 Maple Road, Longmeadow, MA 01106</span>
+          </div>
+        </div>
+
+        <div class="re-line">RE: Citizen Petition for Comprehensive Performance Review and Non-Reappointment of Tree Warden Leah Grigorov — Pattern of Procedural Non-Compliance, Lack of Scientific Rigor, and Failure of Public Accountability</div>
+
+        <p>We, the undersigned residents and taxpayers of the Town of Longmeadow, formally petition the Town Manager to conduct a comprehensive performance review of Tree Warden Leah Grigorov and to exercise the Town's personnel authority to decline her reappointment for the upcoming term. This petition is grounded in a documented pattern of procedural non-compliance, a lack of scientific rigor in tree assessments, disregard for resident rights to information and due process, and decisions that conflict with the Town's publicly funded canopy preservation goals.</p>
+
+        <p>The Williams Street tree removal proposal is the most recent and visible example of these concerns, but this petition addresses the Tree Warden's overall conduct and fitness for reappointment during her tenure. This petition is submitted alongside our concurrent Written Objection under M.G.L. c. 87, § 4, which has already triggered a mandatory stay of the proposed Williams Street removals.</p>
+
+        <p class="section-head">II. Grounds for Review and Non-Reappointment</p>
+
+        <div class="ground">
+          <p class="ground-title">1. Pattern of Bypassing Required Public Notice Procedures</p>
+          <p>M.G.L. c. 87, § 3 imposes mandatory notice requirements before any public shade tree may be removed. The undersigned have observed a recurring pattern in which these requirements have not been fully satisfied. The Williams Street proposal is the most recent example — residents were not afforded meaningful advance notice or a genuine opportunity to participate before removal decisions were made.</p>
+        </div>
+
+        <div class="ground">
+          <p class="ground-title">2. Lack of Scientific Rigor — Overreliance on Subjective Visual Assessment</p>
+          <p>The Tree Warden has consistently failed to provide written ISA risk assessments or empirical diagnostic documentation to support removal recommendations. The trees proposed on Williams Street appear visibly healthy. Reliance on subjective visual assessment alone — without tools such as Sonic Tomography or Resistograph testing — does not meet the professional standard expected of a qualified arborist recommending permanent removal of mature public trees.</p>
+        </div>
+
+        <div class="ground">
+          <p class="ground-title">3. Failure to Respond to Resident Complaints and Requests for Documentation</p>
+          <p>Residents have repeatedly sought access to written assessment reports, risk ratings, and the professional basis for specific removal decisions. These requests have not been adequately addressed. The failure to proactively provide — or to make available upon request — the documentation underlying removal recommendations is a failure of basic public accountability that denies residents their right to meaningful participation in the statutory hearing process.</p>
+        </div>
+
+        <div class="ground">
+          <p class="ground-title">4. Decisions That Conflict with Town-Funded Canopy Goals</p>
+          <p>In 2022, Longmeadow received a $20,000 DCR Urban Forestry grant to assess and preserve its 9,000 street trees, valued at over $1.6 million in annual ecosystem services. The Tree Warden's pattern of recommending removal of mature, healthy-appearing trees without documented justification directly contradicts these publicly funded commitments and works against the Town's own environmental goals.</p>
+        </div>
+
+        <div class="ground">
+          <p class="ground-title">5. Statutory Qualification Requirements — M.G.L. Chapter 41, Section 106</p>
+          <p>For towns exceeding 10,000 inhabitants, the Tree Warden must be <em>"qualified by training and experience in the field of arboriculture and licensed with the Department of Food and Agriculture."</em> The undersigned request that the Town Manager confirm on the record that Tree Warden Grigorov meets all requirements under M.G.L. c. 41, § 106 and that her assessments use ISA-recognized methodology. In light of the concerns raised here, this confirmation is essential to the Town's due diligence.</p>
+        </div>
+
+        <p class="section-head">III. Actions Requested of the Town Manager</p>
+
+        <ol>
+          <li>Conduct a comprehensive performance review of Tree Warden Leah Grigorov covering her overall tenure and present findings to the Select Board at a duly noticed public meeting;</li>
+          <li>Decline to reappoint Tree Warden Grigorov for the upcoming term and initiate a search for a successor holding current ISA or Massachusetts Certified Arborist credentials;</li>
+          <li>Suspend all non-emergency tree removals on Williams Street pending an independent third-party arborist review using empirical diagnostic methods;</li>
+          <li>Require written ISA risk assessments for each tree proposed for removal on Williams Street, including defects observed, risk rating, diagnostic methodology, and basis for removal over remediation;</li>
+          <li>Establish a policy requiring all future removal recommendations to be supported by written, empirically grounded assessments available to residents in advance of any hearing;</li>
+          <li>Confirm on the record that the Tree Warden meets all M.G.L. c. 41, § 106 qualification requirements; and</li>
+          <li>Respond to this petition in writing within 14 days and place this matter on the Select Board's next public meeting agenda.</li>
+        </ol>
+
+        <div class="divider"></div>
+
+        <div class="signers-preview">
+          <h4>Signatories</h4>
+          <div id="signers-list">
+            <p class="empty-signers">No signatures yet — be the first to sign.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SIGN CARD -->
+    <div class="sign-card">
+      <div class="sign-card-header">
+        <h2>Add Your Name</h2>
+        <p>Sign the petition calling for the Tree Warden's performance review and non-reappointment.</p>
+      </div>
+
+      <div id="form-wrap">
+        <form class="sign-form" id="sign-form" novalidate>
+
+          <div class="field">
+            <label for="full-name">Full Name *</label>
+            <input type="text" id="full-name" placeholder="Jane Smith" autocomplete="name">
+            <span class="error-msg" id="name-error">Please enter your full name.</span>
+          </div>
+
+          <div class="field">
+            <label for="address">Street Address *</label>
+            <input type="text" id="address" placeholder="123 Williams Street" autocomplete="street-address">
+            <span class="error-msg" id="addr-error">Please enter your street address.</span>
+          </div>
+
+          <div class="field">
+            <label for="email">Email Address (optional)</label>
+            <input type="email" id="email" placeholder="jane@email.com" autocomplete="email">
+            <p class="field-note">Never shared. Optional confirmation only.</p>
+          </div>
+
+          <div class="field">
+            <label for="sig-input">Typed Signature *</label>
+            <input type="text" id="sig-input" class="sig-field" placeholder="Type your name to sign">
+            <p class="field-note">Your typed name serves as your electronic signature.</p>
+            <span class="error-msg" id="sig-error">Please type your name as your signature.</span>
+          </div>
+
+          <div class="field">
+            <label for="sig-date">Date</label>
+            <input type="date" id="sig-date">
+          </div>
+
+          <div class="consent-box">
+            <label>
+              <input type="checkbox" id="consent">
+              <span>I am a resident or taxpayer of Longmeadow, MA, and I support this Citizen Petition for Performance Review and Non-Reappointment of Tree Warden Leah Grigorov based on the documented grounds set forth in this petition.</span>
+            </label>
+            <span class="error-msg" id="consent-error" style="display:none; margin-top:6px;">You must confirm your agreement to sign.</span>
+          </div>
+
+          <button type="submit" class="btn-submit">Sign the Petition</button>
+
+        </form>
+      </div>
+
+      <div class="success-panel" id="success-panel">
+        <div class="check-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f0ece4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+        <h3>Signature Recorded</h3>
+        <p>Thank you. Your name has been added to the petition. Share this page with neighbors and Longmeadow taxpayers to build the case for action.</p>
+        <button class="btn-sign-another" onclick="resetForm()">Add Another Signature</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- EXPORT -->
+  <div class="export-section" id="export-section" style="display:none;">
+    <h3>Export Signature List</h3>
+    <p>Download the full list of signatories to attach to the printed petition before submission.</p>
+    <button class="btn-export" onclick="exportCSV()">Download as CSV</button>
+    <button class="btn-export" onclick="exportText()">Download as Plain Text</button>
+    <button class="btn-export" onclick="printSigners()">Print Signer List</button>
+  </div>
+
+</div>
+
+<script>
+  let signers = JSON.parse(localStorage.getItem('review_signers') || '[]');
+  const today = new Date().toISOString().split('T')[0];
+  document.getElementById('sig-date').value = today;
+
+  function renderSigners() {
+    const list = document.getElementById('signers-list');
+    const heroCount = document.getElementById('hero-count');
+    const liveText = document.getElementById('live-count-text');
+    const exportSection = document.getElementById('export-section');
+
+    heroCount.textContent = signers.length;
+
+    if (signers.length === 0) {
+      list.innerHTML = '<p class="empty-signers">No signatures yet — be the first to sign.</p>';
+      liveText.textContent = 'Be the first to sign';
+      exportSection.style.display = 'none';
+    } else {
+      liveText.textContent = signers.length === 1 ? '1 resident has signed' : `${signers.length} residents have signed`;
+      exportSection.style.display = 'block';
+      list.innerHTML = signers.map(s => `
+        <div class="signer-entry">
+          <span class="signer-name">${esc(s.sig)}</span>
+          <span class="signer-addr">${esc(s.address)} · ${esc(s.date)}</span>
+        </div>`).join('');
+    }
+  }
+
+  function esc(str) {
+    return String(str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  document.getElementById('sign-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('full-name').value.trim();
+    const address = document.getElementById('address').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const sig = document.getElementById('sig-input').value.trim();
+    const date = document.getElementById('sig-date').value || today;
+    const consent = document.getElementById('consent').checked;
+    let valid = true;
+
+    [['full-name','name-error',name],['address','addr-error',address],['sig-input','sig-error',sig]].forEach(([id,errId,val]) => {
+      if (!val) {
+        document.getElementById(errId).style.display = 'block';
+        document.getElementById(id).classList.add('error');
+        valid = false;
+      } else {
+        document.getElementById(errId).style.display = 'none';
+        document.getElementById(id).classList.remove('error');
+      }
+    });
+
+    if (!consent) { document.getElementById('consent-error').style.display = 'block'; valid = false; }
+    else { document.getElementById('consent-error').style.display = 'none'; }
+    if (!valid) return;
+
+    const dateObj = new Date(date + 'T12:00:00');
+    const formattedDate = dateObj.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    signers.push({ name, address, email, sig, date: formattedDate, raw_date: date });
+    localStorage.setItem('review_signers', JSON.stringify(signers));
+    renderSigners();
+    document.getElementById('form-wrap').style.display = 'none';
+    document.getElementById('success-panel').style.display = 'block';
+  });
+
+  function resetForm() {
+    document.getElementById('sign-form').reset();
+    document.getElementById('sig-date').value = today;
+    document.getElementById('form-wrap').style.display = 'block';
+    document.getElementById('success-panel').style.display = 'none';
+  }
+
+  function exportCSV() {
+    if (!signers.length) return;
+    const rows = signers.map((s,i) => `${i+1},"${s.name}","${s.sig}","${s.address}","${s.date}"`);
+    download('performance_review_petition_signers.csv', 'Number,Printed Name,Signature,Address,Date\n' + rows.join('\n'), 'text/csv');
+  }
+
+  function exportText() {
+    if (!signers.length) return;
+    const lines = ['SIGNATURES — Citizen Petition for Administrative Review','Performance Review Petition — Longmeadow, MA','='.repeat(50),'', ...signers.map((s,i) => `${i+1}. ${s.name}\n   Address: ${s.address}\n   Signed: ${s.sig} (${s.date})`), '', `Total: ${signers.length}`, `Exported: ${new Date().toLocaleString()}`];
+    download('performance_review_petition_signers.txt', lines.join('\n'), 'text/plain');
+  }
+
+  function printSigners() {
+    const w = window.open('', '_blank');
+    w.document.write(`<html><head><title>Signers — Administrative Review Petition</title>
+    <style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;font-size:13px}h1{font-size:18px;margin-bottom:4px}h2{font-size:13px;color:#666;font-weight:normal;margin-bottom:24px}table{width:100%;border-collapse:collapse}th{background:#2a3540;color:white;padding:8px 10px;text-align:left;font-size:11px;letter-spacing:.08em;text-transform:uppercase}td{padding:8px 10px;border-bottom:1px solid #ddd;font-size:12px}tr:nth-child(even) td{background:#f5f5f5}.footer{margin-top:20px;font-size:11px;color:#888}</style></head><body>
+    <h1>Signatures — Citizen Petition for Administrative Review</h1>
+    <h2>Williams Street Tree Objection &nbsp;·&nbsp; Longmeadow, MA</h2>
+    <table><tr><th>#</th><th>Printed Name</th><th>Signature</th><th>Address</th><th>Date</th></tr>
+    ${signers.map((s,i)=>`<tr><td>${i+1}</td><td>${esc(s.name)}</td><td><em>${esc(s.sig)}</em></td><td>${esc(s.address)}</td><td>${esc(s.date)}</td></tr>`).join('')}
+    </table><p class="footer">Total: ${signers.length} &nbsp;·&nbsp; Printed: ${new Date().toLocaleString()}</p></body></html>`);
+    w.document.close(); w.print();
+  }
+
+  function download(filename, content, type) {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([content], { type }));
+    a.download = filename;
+    a.click();
+    URL.revokeObjectURL(a.href);
+  }
+
+  renderSigners();
+</script>
+
+</body>
+</html>
